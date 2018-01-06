@@ -277,7 +277,7 @@ class CBitcoinAddress : public CBase58Data
 public:
     enum
     {
-        PUBKEY_ADDRESS = 19, // addresses start with L
+        PUBKEY_ADDRESS = 12, // addresses start with L
         SCRIPT_ADDRESS = 5,
         PUBKEY_ADDRESS_TEST = 111,
         SCRIPT_ADDRESS_TEST = 196,
@@ -410,7 +410,7 @@ public:
     };
 
     void SetSecret(const CSecret& vchSecret, bool fCompressed)
-    { 
+    {
         assert(vchSecret.size() == 32);
         SetData(fTestNet ? PRIVKEY_ADDRESS_TEST : PRIVKEY_ADDRESS, &vchSecret[0], vchSecret.size());
         if (fCompressed)
